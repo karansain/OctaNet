@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+
+<style>
+
+    .checkbox-list {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .checkbox-container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        font-size: 18px;
+        user-select: none;
+    }
+
+    .checkbox-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 5px;
+    }
+
+    .checkbox-container:hover input~.checkmark {
+        background-color: #ccc;
+    }
+
+    .checkbox-container input:checked~.checkmark {
+        background-color: #ff2222;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .checkbox-container input:checked~.checkmark:after {
+        display: block;
+    }
+
+    .checkbox-container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+    }
+
+    .contact {
+        background-color: #a0a0a021;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        color: #ff2222;
+        font-size: 15px;
+    }
+</style>
+
+
+<body class="bg-black font-roboto">
+
+    <div class="container min-h-screen max-w-screen-2xl mx-auto px-4 sm:p-0">
+        <nav class="flex flex-col sm:flex-row items-center justify-between pl-4 pr-4 py-5 sm:pl-20 sm:pr-20">
+            <div class="flex justify-between items-center w-full sm:w-auto">
+                <div class="logo mb-4 sm:mb-0">
+                    <img src="./assets/images/klogo.png" alt="Logo">
+                </div>
+                <div class="block sm:hidden">
+                    <button id="menu-button" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="menu" class="flex-col sm:flex-row items-center hidden sm:flex">
+                <ul class="flex flex-col sm:flex-row items-center">
+                    <a href="#hero"><li class="list-none inline-block px-5 text-red-600 text-xl font-bold">Home</li></a>
+                    <a href="#feature"><li class="list-none inline-block px-5 text-red-600 text-xl font-bold">About</li></a>
+                    <a href="#trainers"><li class="list-none inline-block px-5 text-red-600 text-xl font-bold">Experts</li></a>
+                    <a href="#servire"><li class="list-none inline-block px-5 text-red-600 text-xl font-bold">Service</li></a>
+                    <a href="#review"><li class="list-none inline-block px-5 text-red-600 text-xl font-bold">Review</li></a>
+                    <a href="#register"><li class="list-none inline-block px-5 text-red-600 text-xl font-bold">Registration</li></a>
+                </ul>
+                <button onclick="location.href = '#contact'"
+                    class="h-10 w-24 ml-4 mt-2 rounded-lg bg-gradient-to-r from-red-500 to-orange-600 sm:mt-0 sm:ml-5">Contact
+                    Us</button>
+            </div>
+        </nav>
+
+
+        <section class="flex flex-col sm:flex-row items-center justify-center mt-5" id="hero">
+            <div
+                class="flex flex-col text-center sm:text-right sm:mr-5 items-center sm:items-end justify-center w-full sm:w-[550px] h-auto sm:h-[500px]">
+                <h3 class="text-red-600 text-2xl font-bold">SINCE-2024</h3>
+                <h1 class="text-gray-400 text-5xl font-bold">MAKE YOUR BODY SHAPE <br> WITH US</h1>
+                <p class="text-gray-500">Welcome to Iron Forge Fitness, your ultimate destination for fitness and health.
+                    Join us and transform your body, mind, and spirit with our state-of-the-art facilities and expert
+                    trainers.</p>
+            </div>
+            <div class="w-full sm:w-[550px] h-auto sm:h-[500px]">
+                <img class="w-full sm:w-[550px] h-auto sm:h-[500px] object-cover" src="./assets/images/heroImg.jpeg"
+                    alt="image">
+            </div>
+        </section>
+
+
+
+        <center>
+            <h1 class=" mt-24 font-bold text-red-600 text-4xl" id="feature">Features</h1>
+        </center>
+
+
+        <section class="mt-12 flex flex-col sm:flex-row items-center justify-center" >
+            <img src="./assets/images/hero2.jpeg" alt="" class="w-64 h-auto sm:h-[550px] object-cover mb-4 sm:mb-0">
+            <div class="sm:ml-5 h-auto sm:h-96 w-auto sm:w-96">
+                <h5 class="text-red-600">OUR BEST FEATURES</h5>
+                <h1 class="text-white">WHY CHOOSE US?</h1>
+                <div class="grid grid-cols-2 gap-5">
+                    <div class="1">
+                        <div class="h-12 w-12 bg-slate-100 flex items-center justify-center m-2 rounded-md">
+                            <img src="./assets/icons/report.png" alt="" class="h-10 w-10 bg-transparent">
+                        </div>
+                        <h5 class="text-red-600">PROGRESSION</h5>
+                        <p class="text-gray-400 text-xs">The greater part of progress is the desire to progress.</p>
+                    </div>
+                    <div class="2">
+                        <div class="h-12 w-12 bg-slate-100 flex items-center justify-center m-2 rounded-md">
+                            <img src="./assets/icons/weightlifting.png" alt="" class="h-10 w-10 bg-transparent">
+                        </div>
+                        <h5 class="text-red-600">WORKOUT</h5>
+                        <p class="text-gray-400 text-xs">Allow yourself the opportunity to get uncomfortable</p>
+                    </div>
+                    <div class="3">
+                        <div class="h-12 w-12 bg-slate-100 flex items-center justify-center m-2 rounded-md">
+                            <img src="./assets/icons/healthy-food (1).png" alt="" class="h-10 w-10 bg-transparent">
+                        </div>
+                        <h5 class="text-red-600">NUTRITION</h5>
+                        <p class="text-gray-400 text-xs">Proper nutrition helps keep energy levels up and protects
+                            against illnesses and diseases</p>
+                    </div>
+                    <div class="4">
+                        <div class="h-12 w-12 bg-slate-100 flex items-center justify-center m-2 rounded-md">
+                            <img src="./assets/icons/knife.png" alt="" class="h-10 w-10 bg-transparent">
+                        </div>
+                        <h5 class="text-red-600">SELF DEFENCE</h5>
+                        <p class="text-gray-400 text-xs">Improves your focus and concentration. As a result, it teaches
+                            you to focus in stressful situations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <center>
+            <h1 class=" mt-24 font-bold text-red-600 text-4xl" id="trainers">Expert Trainers</h1>
+        </center>
+
+        <section class=" flex flex-col items-center justify-center sm:flex-row" >
+            <div class=" m-12 bg-slate-200 rounded-lg overflow-hidden w-72 text-center shadow-md">
+                <div class="bg-gradient-to-r from-red-500 to-orange-600 text-white p-1">
+                    <h2>Karan Sain</h2>
+                </div>
+
+                <div class=" w-72 h-60 object-cover">
+                    <img src="./assets/images/Karan.jpeg" alt="Card Image" class=" w-72 h-60 object-cover">
+                </div>
+                <div class=" p-4 bg-transparent">
+                    <p>Hi! I'm Karan, a certified gym trainer with over 5 years of experience. I specialize in
+                        personalized
+                        workout plans, strength training, and nutrition. Whether you're new to fitness or an
+                        experienced
+                        athlete, I'm here to help you reach your goals and enjoy the journey!</p>
+                </div>
+                <div class=" p-2 bg-slate-50">
+
+                    <a href="https://www.instagram.com/marcus.26.1?utm_source=qr&igsh=NDBqZ2l1dzNvazBz" target="_blank"
+                        class="bg-gradient-to-r from-red-500 to-orange-600 text-white py-2.5 px-5 text-center no-underline inline-block text-sm rounded-sm cursor-pointer"
+                        onclick="">More</a>
+                </div>
+            </div>
+            <div class=" m-12 bg-slate-200 rounded-lg overflow-hidden w-72 text-center shadow-md">
+                <div class="bg-gradient-to-r from-red-500 to-orange-600 text-white p-1">
+                    <h2>Anil</h2>
+                </div>
+                <div class=" w-72 h-60 object-cover">
+                    <img src="./assets/images/bholo.jpg" alt="Card Image" class=" w-72 h-60 object-cover">
+                </div>
+                <div class=" p-4 bg-transparent">
+                    <p>As a certified gym trainer, I create personalized workout plans and provide expert guidance
+                        in
+                        strength training and nutrition. My name is Anil, and I'm dedicated to supporting both
+                        beginners and
+                        seasoned athletes in achieving their fitness goals!</p>
+                </div>
+                <div class="p-2 bg-slate-50">
+                    <a href="https://www.instagram.com/anni_jangir?igsh=Y2tzNHBxMXhsa2Q4" target="_blank"
+                        class="bg-gradient-to-r from-red-500 to-orange-600 text-white py-2.5 px-5 text-center no-underline inline-block text-sm rounded-sm cursor-pointer"
+                        onclick="">More</a>
+                </div>
+            </div>
+        </section>
+
+        <center>
+            <h1 class=" mt-24 font-bold text-red-600 text-4xl" id="Service">Training Programs</h1>
+        </center>
+
+        <section class=" flex flex-col items-center justify-center sm:flex-row" >
+
+
+
+            <div class=" m-12 bg-gray-900 rounded-lg shadow-md overflow-hidden w-64 text-center">
+
+                <div class=" w-72 h-72 object-cover">
+                    <img src="assets/images/Weiight.jpg" alt="Card Image" class=" w-72 h-72 object-cover">
+                </div>
+                <div class=" p-4 bg-transparent">
+                    <center>
+                        <h3 class=" text-red-600">Weight Training</h3>
+                    </center>
+                    <p></p>
+                </div>
+
+            </div>
+            <div class="m-12 bg-gray-900 rounded-lg shadow-md overflow-hidden w-64 text-center">
+                <div class="w-72 h-72 object-cover">
+                    <img src="./assets/images/Calisthenics.jpg" alt="Card Image" class="w-72 h-72 object-cover">
+                </div>
+                <div class=" p-4 bg-transparent">
+                    <center>
+                        <h3 class=" text-red-600">Calisthenics</h3>
+                    </center>
+                    <p></p>
+                </div>
+
+            </div>
+
+            <div class="m-12 bg-gray-900 rounded-lg shadow-md overflow-hidden w-64 text-center">
+                <div class="w-72 h-72 object-cover">
+                    <img src="./assets/images/Cardio.jpg" alt="Card Image" class="w-72 h-72 object-cover">
+                </div>
+                <div class=" p-4 bg-transparent">
+                    <center>
+                        <h3 class=" text-red-600">Cardio</h3>
+                    </center>
+                    <p></p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+    <section class=" mt-12 h-24 sm:h-52 w-full bg-[#f9f9f951] flex flex-row justify-center items-center gap-12">
+        <div class=" bg-transparent h-24 w-24 sm:h-52 sm:w-52">
+            <img src="./assets/Sticker/body.png" alt="" class=" h-24 w-24 sm:h-52 sm:w-52">
+        </div>
+        <div class="bg-transparent h-24 w-24 sm:h-52 sm:w-52">
+            <img src="./assets/Sticker/crossfit.png" alt="" class=" h-24 w-24 sm:h-52 sm:w-52">
+        </div>
+        <div class="bg-transparent h-24 w-24 sm:h-52 sm:w-52">
+            <img src="./assets/Sticker/thegym.png" alt="" class=" h-24 w-24 sm:h-52 sm:w-52">
+        </div>
+        <div class="bg-transparent h-24 w-24 sm:h-52 sm:w-52">
+            <img src="./assets/Sticker/npng.png" alt="" class=" h-24 w-24 sm:h-52 sm:w-52">
+        </div>
+        <div class="bg-transparent h-24 w-24 sm:h-52 sm:w-52">
+            <img src="./assets/Sticker/sfh.png" alt="" class=" h-24 w-24 sm:h-52 sm:w-52">
+        </div>
+
+    </section>
+
+
+    <div class="container min-h-screen max-w-screen-2xl mx-auto px-4 sm:p-0" >
+        <center>
+            <h1 class=" mt-24 font-bold text-red-600 text-4xl mb-14" id="review"> What Our Clients Say About US!</h1>
+        </center>
+
+        <section class="review">
+            <div class="flex flex-wrap justify-center gap-5 ">
+                <div class=" bg-[#6d6d6d] rounded-xl p-5 w-72">
+                    <div class=" flex items-center mb-3">
+                        <div class=" w-20 h-20 overflow-hidden rounded-full mb-3">
+                            <img alt="customer1" src="./assets/images/deves.jpeg" class=" w-full">
+                        </div>
+                        <div class=" ml-2">
+                            <h4 class=" m-0 text-2xl font-semibold">Devesh</h4>
+                            <p class=" m-0 mt-1 text-base font-normal text-gray-900">Softwer Engineer</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="m-0 text-lg font-normal leading-7 text-gray-900">Gyms offer a comprehensive
+                            environment tailored for fitness enthusiasts of all levels.
+                            They provide a wide array of equipment, from cardio machines and other activities</p>
+                    </div>
+                    <div class=" flex justify-between items-center mt-2.5 text-base text-black">
+                        <div class=" flex">
+                            <span class=" text-xl text-[#fbc02d]">★</span>
+                            <span class=" text-xl text-[#fbc02d]">★</span>
+                            <span class=" text-xl text-[#fbc02d]">★</span>
+                            <span class="">★</span>
+                            <span class="">★</span>
+                        </div>
+                        <p class=" ml-14">Reviewed on 01/01/2024</p>
+                    </div>
+                </div>
+                <div class=" bg-[#6d6d6d] rounded-xl p-5 w-72">
+                    <div class=" flex items-center mb-3">
+                        <div class=" w-20 h-20 overflow-hidden rounded-full mb-3">
+                            <img alt="customer1" src="./assets/images/sushant.jpeg" class=" w-full">
+                        </div>
+                        <div class=" ml-2">
+                            <h4 class=" m-0 text-2xl font-semibold">Sushant</h4>
+                            <p class=" m-0 mt-1 text-base font-normal text-gray-900">Web Developer</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="m-0 text-lg font-normal leading-7 text-gray-900">The benefits of joining a gym include
+                            access to diverse equipment, professional trainers
+                            for
+                            expert guidance, and a community atmosphere that can enhance motivation. </p>
+                    </div>
+                    <div class=" flex justify-between items-center mt-2.5 text-base text-black">
+                        <div class=" flex text-balance">
+                            <span class=" text-xl text-[#fbc02d]">★</span>
+                            <span class=" text-xl text-[#fbc02d]">★</span>
+                            <span class="">★</span>
+                            <span class="">★</span>
+                            <span class="">★</span>
+                        </div>
+                        <p class=" ml-14">Reviewed on 01/02/2024</p>
+                    </div>
+                </div>
+                <div class=" bg-[#6d6d6d] rounded-xl p-5 w-72">
+                    <div class=" flex items-center mb-3">
+                        <div class=" w-20 h-20 overflow-hidden rounded-full mb-3">
+                            <img alt="customer1" src="./assets/images/mayank.jpeg" class=" w-full">
+                        </div>
+                        <div class=" ml-2">
+                            <h4 class=" m-0 text-2xl font-semibold">Mayank</h4>
+                            <p class=" m-0 mt-1 text-base font-normal text-gray-900">Manager Bharat Food</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="m-0 text-lg font-normal leading-7 text-gray-900">Gyms provide a structured environment
+                            for all fitness levels, offering diverse equipment,
+                            professional trainers, and a supportive community.</p>
+                    </div>
+                    <div class=" flex justify-between items-center mt-2.5 text-base text-black">
+                        <div class=" flex">
+                            <span class=" text-xl text-[#fbc02d]">★</span>
+                            <span class=" text-xl text-[#fbc02d]">★</span>
+                            <span class=" text-xl text-[#fbc02d]">★</span>
+                            <span class=" text-xl text-[#fbc02d]">★</span>
+                            <span class=" text-xl text-[#fbc02d]">★</span>
+                        </div>
+                        <p class=" ml-14">Reviewed on 01/03/2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <center>
+            <h1 class=" mt-24 font-bold text-red-600 text-4xl mb-14" id="register">Registration Form</h1>
+        </center>
+
+
+        <section class="flex justify-center items-center w-full" >
+            <form id="contact-form" action="submit"
+                class="flex flex-col gap-5 w-[500px] p-5 border-2 border-red-500 rounded-lg">
+                <label class="text-red-500 text-lg font-bold" for="Name">Name</label>
+                <input id="name" class="w-full h-8 rounded-lg border-none p-1.5 bg-[#ffcece5b] text-base" type="text"
+                    placeholder="Enter Your Name">
+                <label class="text-red-500 text-lg font-bold" for="Email">Email</label>
+                <input id="email" class="w-full h-8 rounded-lg border-none p-1.5 bg-[#ffcece5b] text-base" type="email"
+                    placeholder="Enter Your Email">
+                <label class="text-red-500 text-lg font-bold" for="age">Age</label>
+                <input id="age" class="w-full h-8 rounded-lg border-none p-1.5 bg-[#ffcece5b] text-base" type="number"
+                    placeholder="Enter Your Age">
+                <label class="text-red-500 text-lg font-bold" for="Phone no.">Phone no.</label>
+                <input id="phone" class="w-full h-8 rounded-lg border-none p-1.5 bg-[#ffcece5b] text-base" type="number"
+                    placeholder="Enter Your Phone no.">
+                <label class="text-red-500 text-lg font-bold" for="Duration">Duration</label>
+                <input id="duration" class="w-full h-8 rounded-lg border-none p-1.5 bg-[#ffcece5b] text-base"
+                    type="number" placeholder="Duration">
+                <div class="checkbox-list">
+                    <label class="checkbox-container text-red-500 text-lg font-bold">Weight Lifting
+                        <input type="checkbox" id="weight-lifting">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-container text-red-500 text-lg font-bold">Calisthenics
+                        <input type="checkbox" id="calisthenics">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-container text-red-500 text-lg font-bold">Cardio
+                        <input type="checkbox" id="cardio">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <center><button
+                        class="form-button h-10 w-24 rounded-lg bg-gradient-to-r from-red-500 to-orange-500 border-0 text-white text-base"
+                        id="submit-button">Submit</button></center>
+
+            </form>
+        </section>
+    </div>
+    <center>
+        <h1 class=" mt-24 font-bold text-red-600 text-4xl" id="contact">Contact US</h1>
+    </center>
+
+    <section class=" mb-28 bg-[#a0a0a021] mt-12 flex flex-col items-center w-full text-[#ff2222] text-sm" >
+        <p>9636988473</p>
+        <p>karansain920@gmail.com</p>
+        <p>Sikar, Rajasthan</p>
+    </section>
+
+
+
+    <script>
+
+
+
+        document.getElementById('menu-button').addEventListener('click', function () {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        });
+
+
+
+
+        (function () {
+            emailjs.init("YOUR_USER_ID");
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const formData = {
+                name: form.name.value,
+                email: form.email.value,
+                age: form.age.value,
+                phone: form.phone.value,
+                duration: form.duration.value,
+                weightLifting: form['weight-lifting'].checked ? 'Yes' : 'No',
+                calisthenics: form.calisthenics.checked ? 'Yes' : 'No',
+                cardio: form.cardio.checked ? 'Yes' : 'No'
+            };
+
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData)
+                .then(function (response) {
+                    console.log("SUCCESS!", response.status, response.text);
+                    alert("Form submitted successfully!");
+                }, function (error) {
+                    console.error("FAILED...", error);
+                    alert("Form submission failed!");
+                });
+        });
+    </script>
+
+
+</body>
+
+</html>
